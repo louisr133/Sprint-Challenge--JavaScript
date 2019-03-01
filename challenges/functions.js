@@ -21,11 +21,34 @@
 // consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
 
 
+function consume(param1, param2, cb){
+	console.log(cb(param1, param2));
+}
+
+function add(x, y){
+	return x + y;
+}
+
+function greeting(x, y){
+	return `Hello ${x} ${y},nice to meet you `
+}
+
+function times(x, y){
+	return x * y;
+}
+
+consume(2,2,add);
+consume(2,3,times);
+consume("Mary","pop",greeting);
+
+
 // ==== Closures ==== 
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
 // Explanation: 
+
+//Because nested functions has access to higher scoped variales. 
 
 
 const external = "I'm outside the function";
@@ -40,3 +63,8 @@ function myFunction() {
   nestedFunction();
 }
 myFunction();
+
+
+
+
+
